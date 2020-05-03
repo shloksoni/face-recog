@@ -22,7 +22,7 @@ class Register extends Component  {
     this.setState({name : event.target.value})
   }
   onSubmitRegister = () =>{
-    fetch('https://fierce-meadow-34939.herokuapp.com/register', {
+    fetch('http ://localhost:3010/register', {
       method: 'post',
       headers : {'Content-type' : 'application/json'},
       body : JSON.stringify({

@@ -32,6 +32,7 @@ class App extends Component {
 
   constructor(){
     super();
+    
     this.state = {
       input :'',
       imageUrl: '',
@@ -97,7 +98,7 @@ class App extends Component {
   onSubmit = (event) =>{
     this.setState({imageUrl : this.state.input})
 
-     fetch('https://fierce-meadow-34939.herokuapp.com/clarifai', {
+     fetch('http://localhost:3010/clarifai', {
        method: 'post',
        headers : {'Content-type' : 'application/json'},
        body: JSON.stringify({
@@ -107,7 +108,7 @@ class App extends Component {
         .then(response => response.json())
         .then (response => {
           if(response){
-            fetch('https://fierce-meadow-34939.herokuapp.com/image', {
+            fetch('http://localhost:3010/image', {
               method: 'put',
               headers : {'Content-type' : 'application/json'},
               body : JSON.stringify({
